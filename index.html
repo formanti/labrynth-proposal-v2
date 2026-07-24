@@ -146,18 +146,28 @@ section{ padding:88px 0; }
 .sequence-note strong{ color:var(--text); font-weight:600; }
 @media (max-width:640px){ .thesis{ padding:28px 26px; } .thesis-head{ font-size:23px; } }
 
-/* The Model — pod (dark) + rhythm split */
-.model-split{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:24px; align-items:stretch; }
-.pod-panel{ padding:34px 36px; background:linear-gradient(160deg, var(--blue-light) 0%, var(--bg) 92%); border:1px solid #D6DCFA; border-top:3px solid var(--blue); }
-.pod-title{ font-family:var(--serif); font-size:22px; font-weight:700; line-height:1.25; color:var(--text); margin:2px 0 22px; }
-.pod-role{ display:flex; gap:14px; align-items:flex-start; padding:16px 0; border-top:1px solid #DCE1F7; }
-.pod-role:first-of-type{ border-top:none; padding-top:4px; }
-.pod-dot{ width:11px; height:11px; border-radius:3px; background:var(--green); flex:none; margin-top:5px; box-shadow:0 0 0 3px rgba(26,158,92,0.16); }
-.pod-role-name{ font-family:var(--serif); font-size:17px; font-weight:700; color:var(--text); margin-bottom:5px; }
-.pod-role-name span{ font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:.02em; color:var(--blue); text-transform:none; }
-.pod-role-desc{ font-family:var(--sans); font-size:13px; line-height:1.6; color:var(--text-2); }
-.pod-foot{ margin-top:20px; padding-top:18px; border-top:1px solid #DCE1F7; font-family:var(--sans); font-size:13px; line-height:1.6; color:var(--text-3); }
-.pod-foot strong{ color:var(--text); font-weight:600; }
+/* The team — distinct leadership and delivery layers */
+.model-split{ display:grid; grid-template-columns:.78fr 1.22fr; gap:24px; align-items:stretch; }
+.leadership-panel{ min-width:0; padding:32px 34px; border:1px solid #CCD5F4; border-top:3px solid var(--blue); border-radius:var(--radius-card); background:#F1F4FD; color:var(--text); display:flex; flex-direction:column; }
+.leadership-panel .mod-kicker{ color:var(--blue); }
+.leadership-title{ font-family:var(--serif); font-size:24px; font-weight:700; line-height:1.2; color:var(--text); margin:2px 0 22px; }
+.leadership-person{ padding:18px 0; border-top:1px solid #D7DEF5; }
+.leadership-person-line{ display:flex; align-items:baseline; justify-content:space-between; gap:18px; }
+.leadership-name{ font-family:var(--serif); font-size:20px; font-weight:700; color:var(--text); }
+.leadership-role{ font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); white-space:nowrap; }
+.leadership-desc{ margin-top:7px; font-size:12.5px; line-height:1.6; color:var(--text-2); }
+.leadership-note{ margin-top:auto; padding-top:18px; border-top:1px solid #D7DEF5; font-size:12px; line-height:1.55; color:var(--text-2); }
+.leadership-note strong{ color:var(--text); font-weight:600; }
+.delivery-workspace{ min-width:0; padding:32px 34px; border:1px solid #DED7F8; border-top:3px solid var(--purple); border-radius:var(--radius-card); background:#FBFAFF; display:flex; flex-direction:column; }
+.delivery-workspace .mod-kicker{ color:var(--purple); }
+.delivery-title{ font-family:var(--serif); font-size:26px; font-weight:700; line-height:1.2; color:var(--text); margin:2px 0 8px; }
+.delivery-subtitle{ max-width:560px; font-size:13.5px; line-height:1.55; color:var(--text-2); }
+.delivery-roles{ display:grid; grid-template-columns:repeat(2,1fr); margin-top:30px; padding:24px 0; border-top:1px solid #E4DEF8; border-bottom:1px solid #E4DEF8; }
+.delivery-role{ min-width:0; padding-right:24px; }
+.delivery-role + .delivery-role{ padding-left:24px; padding-right:0; border-left:1px solid #E4DEF8; }
+.delivery-role-label{ font-size:9.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--purple); margin-bottom:8px; }
+.delivery-role-name{ font-family:var(--serif); font-size:20px; font-weight:700; color:var(--text); margin-bottom:7px; }
+.delivery-role-desc{ font-size:12.5px; line-height:1.6; color:var(--text-2); }
 .rhythm{ padding:30px 34px; display:flex; flex-direction:column; }
 .rhythm-label{ font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--text-3); margin-bottom:6px; }
 .rhythm-row{ display:flex; gap:16px; align-items:flex-start; padding:16px 0; border-top:1px solid var(--border); }
@@ -165,7 +175,27 @@ section{ padding:88px 0; }
 .rhythm-num{ width:26px; height:26px; flex:none; border-radius:50%; background:var(--blue-light); color:var(--blue); display:flex; align-items:center; justify-content:center; font-size:12.5px; font-weight:700; margin-top:1px; }
 .rhythm-txt{ font-family:var(--sans); font-size:13.5px; line-height:1.6; color:var(--text-2); }
 .rhythm-txt b{ color:var(--text); font-weight:600; }
-@media (max-width:860px){ .model-split{ grid-template-columns:1fr; } }
+.engagement-glance{ margin-top:30px; padding:18px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-card); }
+.engagement-glance-kicker{ font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); }
+.engagement-glance-main{ display:grid; grid-template-columns:300px 1fr; gap:0; align-items:stretch; }
+.engagement-price{ min-width:0; padding:24px 26px; border-radius:12px; background:var(--blue-light); display:flex; flex-direction:column; justify-content:center; }
+.engagement-price-value{ margin-top:22px; font-family:var(--serif); font-size:44px; line-height:1; font-weight:800; letter-spacing:-.025em; color:var(--text); }
+.engagement-price-value span{ font-family:var(--sans); font-size:15px; font-weight:500; letter-spacing:0; color:var(--text-3); }
+.engagement-price-unit{ margin-top:7px; font-size:12.5px; font-weight:700; color:var(--text); }
+.engagement-pricing-rule{ min-width:0; padding:24px 30px; display:flex; flex-direction:column; justify-content:center; }
+.engagement-pricing-title{ font-family:var(--serif); font-size:23px; font-weight:700; line-height:1.2; color:var(--text); }
+.engagement-pricing-copy{ margin-top:10px; font-size:13px; line-height:1.6; color:var(--text-2); }
+.capacity-band{ margin-top:18px; }
+@media (max-width:860px){
+  .model-split{ grid-template-columns:1fr; }
+  .delivery-roles{ grid-template-columns:1fr; padding:0; border-bottom:none; }
+  .delivery-role{ padding:18px 0; border-top:1px solid #E4DEF8; }
+  .delivery-role + .delivery-role{ padding:18px 0; border-left:none; }
+}
+@media (max-width:760px){
+  .engagement-glance-main{ grid-template-columns:1fr; }
+  .engagement-pricing-rule{ padding:24px 8px 8px; }
+}
 
 /* Next steps — numbered 2x2 */
 .steps{ margin-top:8px; }
@@ -672,7 +702,7 @@ section{ padding:88px 0; }
     <nav class="header-nav">
       <a href="#top">Overview</a>
       <a href="#options">Workstreams</a>
-      <a href="#model">The model</a>
+      <a href="#model">The team</a>
       <a href="#engagement">Investment</a>
       <a href="#next">Next steps</a>
     </nav>
@@ -685,7 +715,7 @@ section{ padding:88px 0; }
   <div class="container">
     <div class="hero-eyebrow">Labrynth &times; Supernal</div>
     <h1 class="hero-heading">AI Employees deployed into your<br><b>most important workflows</b>.</h1>
-    <p class="hero-sub"><strong>Agentic systems</strong>, embedded into your org chart.<br>The work scales. <strong>The team doesn't have to.</strong><br>Four connected workstreams. One embedded team.</p>
+    <p class="hero-sub"><strong>Agentic systems</strong>, embedded into your org chart.<br>The work scales. <strong>The team doesn't have to.</strong><br>Four workstreams. One embedded team.</p>
   </div>
 </section>
 
@@ -724,19 +754,19 @@ section{ padding:88px 0; }
     <div class="section-head">
       <div class="tag">Workstreams</div>
       <h2 class="h2">Four workstreams. One roadmap.</h2>
-      <p class="section-sub">Each workstream augments a part of the business Stuart identified. Together, they form a path toward an AI-native operating model. The decision is where to begin, then how to sequence the rest. Click any workstream for the details.</p>
+      <p class="section-sub">Four areas where agentic systems can augment the business. We align on the first priority, prove the model, and expand from there. Select a workstream to see the details.</p>
     </div>
 
     <div class="thesis">
       <div class="thesis-head">Same team. More leverage before more headcount.</div>
-      <div class="thesis-body">Across the workstreams, agents take on selected repeatable work, updates, deal documents, and routine build tasks, so your people can spend more time on judgment, relationships, and shipping. <strong>One embedded team helps a small team operate with greater leverage.</strong></div>
+      <div class="thesis-body"><strong>Choose one of the workstreams below as the first focus.</strong> Agents take on selected repeatable work, updates, deal documents, and routine build tasks, so your people can spend more time on judgment, relationships, and shipping. The embedded team can move to the next priority as the roadmap develops.</div>
     </div>
 
-    <div class="phase-card open" id="phase-0">
-      <button type="button" class="phase-card-trigger" aria-expanded="true" aria-controls="prd-0" onclick="togglePhase(0)">
-        <span class="phase-number-badge badge-0">1</span>
+    <div class="phase-card" id="phase-0">
+      <button type="button" class="phase-card-trigger" aria-expanded="false" aria-controls="prd-0" onclick="togglePhase(0)">
+        <span class="phase-number-badge badge-0">3</span>
         <span class="phase-card-summary">
-          <span class="phase-card-label">Workstream 1 · Customer Success</span>
+          <span class="phase-card-label">Workstream 3 · Customer Success</span>
           <span class="phase-card-name">Account Management OS</span>
           <span class="phase-card-desc">The fastest proving ground: start with one live account, then expand what works.</span>
         </span>
@@ -746,7 +776,7 @@ section{ padding:88px 0; }
         <div class="prd-inner">
 <div class="jd jd--blue">
   <div class="jd-left">
-    <div class="jd-label">Workstream 1 · System profile</div>
+    <div class="jd-label">Workstream 3 · System profile</div>
     <div class="jd-mission">Agentic account management beside your CS lead.</div>
     <div class="jd-fact"><div class="k">Owner</div><div class="v"><strong>Chris</strong>, Head of Customer Success</div></div>
     <div class="jd-fact"><div class="k">Works in</div><div class="v">Built around ClickUp, Linear, Granola, Notion, HubSpot, and the tools already in use</div></div>
@@ -773,9 +803,9 @@ section{ padding:88px 0; }
 
     <div class="phase-card" id="phase-1">
       <button type="button" class="phase-card-trigger" aria-expanded="false" aria-controls="prd-1" onclick="togglePhase(1)">
-        <span class="phase-number-badge badge-1">2</span>
+        <span class="phase-number-badge badge-1">4</span>
         <span class="phase-card-summary">
-          <span class="phase-card-label">Workstream 2 · From first call to signed work</span>
+          <span class="phase-card-label">Workstream 4 · From first call to signed work</span>
           <span class="phase-card-name">Deal Room</span>
           <span class="phase-card-desc">Conversations become concept docs, proposals, working foundations, and order-form drafts.</span>
         </span>
@@ -785,7 +815,7 @@ section{ padding:88px 0; }
         <div class="prd-inner">
 <div class="jd jd--green">
   <div class="jd-left">
-    <div class="jd-label">Workstream 2 · System profile</div>
+    <div class="jd-label">Workstream 4 · System profile</div>
     <div class="jd-mission">Agentic deal execution, from first call to signed work.</div>
     <div class="jd-fact"><div class="k">Owner</div><div class="v"><strong>Philip</strong>, Head of Sales</div></div>
     <div class="jd-fact"><div class="k">Works in</div><div class="v">Granola, HubSpot, the contract repository, plus the Deal Room workspace we bring</div></div>
@@ -812,9 +842,9 @@ section{ padding:88px 0; }
 
     <div class="phase-card" id="phase-2">
       <button type="button" class="phase-card-trigger" aria-expanded="false" aria-controls="prd-2" onclick="togglePhase(2)">
-        <span class="phase-number-badge badge-3">3</span>
+        <span class="phase-number-badge badge-3">2</span>
         <span class="phase-card-summary">
-          <span class="phase-card-label">Workstream 3 · Index Generation</span>
+          <span class="phase-card-label">Workstream 2 · Index Generation</span>
           <span class="phase-card-name">RTI Index Factory</span>
           <span class="phase-card-desc">Start with one upcoming index and automate one defined bottleneck.</span>
         </span>
@@ -824,7 +854,7 @@ section{ padding:88px 0; }
         <div class="prd-inner">
 <div class="jd jd--amber">
   <div class="jd-left">
-    <div class="jd-label">Workstream 3 · System profile</div>
+    <div class="jd-label">Workstream 2 · System profile</div>
     <div class="jd-mission">Agent-assisted index generation beside your RTI team.</div>
     <div class="jd-fact"><div class="k">Owner</div><div class="v"><strong>Eduardo</strong>, Red Tape Index</div></div>
     <div class="jd-fact"><div class="k">Works in</div><div class="v">Labrynth's existing research sources, evidence base, methodology, and index workflow</div></div>
@@ -849,11 +879,11 @@ section{ padding:88px 0; }
       </div>
     </div>
 
-    <div class="phase-card" id="phase-3">
-      <button type="button" class="phase-card-trigger" aria-expanded="false" aria-controls="prd-3" onclick="togglePhase(3)">
-        <span class="phase-number-badge badge-2">4</span>
+    <div class="phase-card open" id="phase-3">
+      <button type="button" class="phase-card-trigger" aria-expanded="true" aria-controls="prd-3" onclick="togglePhase(3)">
+        <span class="phase-number-badge badge-2">1</span>
         <span class="phase-card-summary">
-          <span class="phase-card-label">Workstream 4 · Software Delivery</span>
+          <span class="phase-card-label">Workstream 1 · Software Delivery</span>
           <span class="phase-card-name">Agentic SDLC</span>
           <span class="phase-card-desc">Your forward-deployed motion, multiplied by agent teams.</span>
         </span>
@@ -863,7 +893,7 @@ section{ padding:88px 0; }
         <div class="prd-inner">
 <div class="jd jd--purple">
   <div class="jd-left">
-    <div class="jd-label">Workstream 4 · System profile</div>
+    <div class="jd-label">Workstream 1 · System profile</div>
     <div class="jd-mission">Agents that augment your delivery team, producing more with less.</div>
     <div class="jd-fact"><div class="k">Owner</div><div class="v"><strong>Harold and Renan</strong>, Product and Engineering</div></div>
     <div class="jd-fact"><div class="k">Works in</div><div class="v">Your repos and delivery workflow, mapped together in week one</div></div>
@@ -890,54 +920,86 @@ section{ padding:88px 0; }
 
     <p class="sequence-note"><strong>The numbering organizes the conversation.</strong> Labrynth sets the sequence.</p>
 
+    <div class="engagement-glance">
+      <div class="engagement-glance-main">
+        <div class="engagement-price">
+          <div class="engagement-glance-kicker">Workstream pricing</div>
+          <div class="engagement-price-value">$15,000 <span>/ mo</span></div>
+          <div class="engagement-price-unit">Per active workstream</div>
+        </div>
+        <div class="engagement-pricing-rule">
+          <div class="engagement-pricing-title">One workstream at a time.</div>
+          <div class="engagement-pricing-copy">Move the pod as priorities change. Each additional workstream running in parallel requires another pod and starts at an additional $15,000 per month.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rhythm capacity-band">
+      <div class="rhythm-label">How the pod moves</div>
+      <div class="rhythm-row">
+        <span class="rhythm-num">1</span>
+        <div class="rhythm-txt"><b>Choose the starting workstream.</b> Together, we agree the first priority, accountable owner, and initial delivery target.</div>
+      </div>
+      <div class="rhythm-row">
+        <span class="rhythm-num">2</span>
+        <div class="rhythm-txt"><b>Deliver one active build.</b> The pod demonstrates progress and updates the backlog as the work becomes usable.</div>
+      </div>
+      <div class="rhythm-row">
+        <span class="rhythm-num">3</span>
+        <div class="rhythm-txt"><b>Redirect the pod when priorities change.</b> We agree scope and timing impacts before the active focus moves.</div>
+      </div>
+      <div class="rhythm-row">
+        <span class="rhythm-num">4</span>
+        <div class="rhythm-txt"><b>Add capacity for parallel work.</b> A larger pod opens another active workstream under a higher monthly tier.</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ===================== THE MODEL ===================== -->
+<!-- ===================== THE TEAM ===================== -->
 <section class="band-elevated" id="model">
   <div class="container">
     <div class="section-head">
-      <div class="tag">The model</div>
-      <h2 class="h2">One embedded team.</h2>
-      <p class="section-sub">The engagement begins with the first workstream we agree to prioritize. From there, strategy and engineering work alongside your team, and the roadmap develops with what we learn together.</p>
+      <div class="tag">The team</div>
+      <h2 class="h2">Executive sponsorship. Embedded execution.</h2>
+      <p class="section-sub">Scott and Seb guide the partnership and its key decisions. The AI Strategist and Mason own the active workstream week to week.</p>
     </div>
     <div class="model-split">
-      <div class="mod-card pod-panel">
-        <div class="mod-kicker">The pod</div>
-        <div class="pod-title">Two roles, embedded beside your team</div>
-        <div class="pod-role">
-          <span class="pod-dot"></span>
-          <div>
-            <div class="pod-role-name">Strategist <span>· forward-deployed product</span></div>
-            <div class="pod-role-desc">Turns your problems into scoped, shippable work, and runs the weekly sync and monthly planning.</div>
+      <div class="leadership-panel">
+        <div class="mod-kicker">Supernal team</div>
+        <div class="leadership-title">Executive and strategic leadership</div>
+        <div class="leadership-person">
+          <div class="leadership-person-line">
+            <div class="leadership-name">Scott</div>
+            <div class="leadership-role">Executive sponsor</div>
           </div>
+          <div class="leadership-desc">Provides partnership oversight and senior support at major decisions, milestones, and escalations.</div>
         </div>
-        <div class="pod-role">
-          <span class="pod-dot"></span>
-          <div>
-            <div class="pod-role-name">Mason <span>· forward-deployed engineer</span></div>
-            <div class="pod-role-desc">Moves one prioritized build forward and shows working increments as scope, access, and review allow.</div>
+        <div class="leadership-person">
+          <div class="leadership-person-line">
+            <div class="leadership-name">Seb</div>
+            <div class="leadership-role">AI strategy lead</div>
           </div>
+          <div class="leadership-desc">Shapes the agentic roadmap and supports major scope, architecture, and strategic decisions.</div>
         </div>
-        <div class="pod-foot">Plus <strong>the AI Employees they deploy</strong> into the workflows you would otherwise hire for.</div>
+        <div class="leadership-note">Both stay involved at key moments across the <strong>12-month partnership</strong>.</div>
       </div>
-      <div class="card rhythm">
-        <div class="rhythm-label">How a month runs</div>
-        <div class="rhythm-row">
-          <span class="rhythm-num">1</span>
-          <div class="rhythm-txt"><b>Weekly working sync.</b> With your operator and the decision-maker: decisions and demos, not status decks.</div>
-        </div>
-        <div class="rhythm-row">
-          <span class="rhythm-num">2</span>
-          <div class="rhythm-txt"><b>One prioritized active build.</b> The pod works toward agreed delivery targets and demonstrates progress as it becomes usable.</div>
-        </div>
-        <div class="rhythm-row">
-          <span class="rhythm-num">3</span>
-          <div class="rhythm-txt"><b>Monthly planning.</b> Each month, we update the backlog based on what we learned.</div>
-        </div>
-        <div class="rhythm-row">
-          <span class="rhythm-num">4</span>
-          <div class="rhythm-txt"><b>Reprioritize at planning checkpoints.</b> Reorder the backlog or propose work of comparable scope, with impacts agreed before work shifts.</div>
+      <div class="delivery-workspace">
+        <div class="mod-kicker">Embedded delivery</div>
+        <div class="delivery-title">The pod working beside your team</div>
+        <div class="delivery-subtitle">A forward-deployed team embedded in your workflows, combining consulting, product, and engineering.</div>
+        <div class="delivery-roles">
+          <div class="delivery-role">
+            <div class="delivery-role-label">Product and cadence</div>
+            <div class="delivery-role-name">AI Strategist</div>
+            <div class="delivery-role-desc">Turns business priorities into scoped, shippable work and runs the weekly sync and monthly planning.</div>
+          </div>
+          <div class="delivery-role">
+            <div class="delivery-role-label">Engineering and delivery</div>
+            <div class="delivery-role-name">Mason</div>
+            <div class="delivery-role-desc">Moves the prioritized build forward and shows working increments as scope, access, and review allow.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -961,7 +1023,7 @@ section{ padding:88px 0; }
         <div class="invest-headline">
           <div class="invest-offer">
             <div class="invest-title">Strategy + Build Team</div>
-            <div class="invest-subtitle">AI strategy and forward-deployed engineering, focused on one workstream at a time.</div>
+            <div class="invest-subtitle">One active workstream at a time, supported by a 12-month strategic partnership.</div>
           </div>
           <div class="invest-price-lg">$15,000<span>/mo</span></div>
         </div>
@@ -984,8 +1046,8 @@ section{ padding:88px 0; }
 
     <div class="incl-card">
       <div class="incl-label">What's included every month</div>
-      <div class="incl-row"><span class="incl-check">→</span><div>A dedicated <strong>Strategist and Mason</strong> working alongside your team.</div></div>
-      <div class="incl-row"><span class="incl-check">→</span><div><strong>One prioritized active build</strong>, beginning with the first agreed workstream and moving through the roadmap as priorities and results guide the sequence.</div></div>
+      <div class="incl-row"><span class="incl-check">→</span><div><strong>Executive sponsorship and AI strategy leadership</strong> from Scott and Seb, alongside a dedicated AI Strategist and Mason.</div></div>
+      <div class="incl-row"><span class="incl-check">→</span><div><strong>One active workstream at a time</strong>, beginning with the first agreed priority and moving through the roadmap as results guide the sequence.</div></div>
       <div class="incl-row"><span class="incl-check">→</span><div>A <strong>monthly planning session</strong> to reprioritize the shared backlog and agree the impact of proposed scope changes.</div></div>
       <div class="incl-row"><span class="incl-check">→</span><div>A <strong>weekly working sync</strong> with the operator and the strategic decision-maker.</div></div>
       <div class="incl-row"><span class="incl-check">→</span><div><strong>Refinement of shipped surfaces</strong>, prioritized alongside new work in the shared backlog.</div></div>
@@ -1040,6 +1102,18 @@ section{ padding:88px 0; }
 </footer>
 
 <script>
+// Render workstreams in the recommended sequence while preserving stable IDs
+// used by the accordion controls.
+(function(){
+  var container = document.querySelector('#options .container');
+  var note = container && container.querySelector('.sequence-note');
+  if(!container || !note) return;
+  ['phase-3', 'phase-2', 'phase-0', 'phase-1'].forEach(function(id){
+    var card = document.getElementById(id);
+    if(card) container.insertBefore(card, note);
+  });
+})();
+
 // Accordion toggle for milestone phase-cards (keyboard-operable: triggers are
 // native <button>s, so Enter/Space fire onclick; aria-expanded kept in sync).
 function togglePhase(idx){

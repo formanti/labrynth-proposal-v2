@@ -144,6 +144,101 @@ section{ padding:88px 0; }
 .thesis-body strong{ color:var(--text); font-weight:600; }
 .sequence-note{ margin-top:24px; font-size:12.5px; line-height:1.55; color:var(--text-3); text-align:center; }
 .sequence-note strong{ color:var(--text); font-weight:600; }
+.value-window{
+  margin:30px 0 0;
+  padding:30px 32px;
+  display:grid;
+  grid-template-columns:minmax(250px,.8fr) minmax(0,1.7fr);
+  gap:38px;
+  align-items:center;
+  border:1px solid var(--border);
+  border-radius:var(--radius-card) var(--radius-card) 0 0;
+  background:linear-gradient(90deg,#F6F7FB 0%,#FFFFFF 48%);
+}
+.value-window-kicker{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--blue);
+}
+.value-window-title{
+  margin-top:9px;
+  max-width:330px;
+  font-family:var(--serif);
+  font-size:25px;
+  font-weight:700;
+  line-height:1.18;
+  color:var(--text);
+}
+.value-window-note{
+  margin-top:10px;
+  max-width:350px;
+  font-size:12px;
+  line-height:1.55;
+  color:var(--text-3);
+}
+.value-milestones{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  border-left:1px solid var(--border);
+}
+.value-milestone{
+  min-width:0;
+  display:grid;
+  grid-template-columns:66px 1fr;
+  gap:18px;
+  align-items:center;
+  padding:5px 26px;
+}
+.value-milestone + .value-milestone{ border-left:1px solid var(--border); }
+.value-time{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.value-time strong{
+  font-family:var(--serif);
+  font-size:36px;
+  font-weight:800;
+  line-height:.9;
+  letter-spacing:-.03em;
+  color:var(--text);
+}
+.value-time span{
+  margin-top:7px;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--blue);
+}
+.value-milestone-title{
+  font-family:var(--serif);
+  font-size:18px;
+  font-weight:700;
+  line-height:1.2;
+  color:var(--text);
+}
+.value-milestone-copy{
+  margin-top:7px;
+  font-size:12.5px;
+  line-height:1.55;
+  color:var(--text-2);
+}
+@media (max-width:920px){
+  .value-window{ grid-template-columns:1fr; gap:24px; }
+  .value-window-title,
+  .value-window-note{ max-width:620px; }
+}
+@media (max-width:680px){
+  .value-window{ padding:26px 24px; }
+  .value-milestones{ grid-template-columns:1fr; border-left:none; }
+  .value-milestone{ padding:18px 0; }
+  .value-milestone:first-child{ border-top:1px solid var(--border); }
+  .value-milestone + .value-milestone{ border-left:none; border-top:1px solid var(--border); }
+}
 @media (max-width:640px){ .thesis{ padding:28px 26px; } .thesis-head{ font-size:23px; } }
 
 /* Opportunity map: two separate businesses, two primary opportunities */
@@ -350,16 +445,17 @@ section{ padding:88px 0; }
   height:96px;
   min-height:96px;
   padding:0 24px;
-  border:1px solid transparent;
+  border:1px solid #DDDDE1;
   border-radius:11px;
-  background:transparent;
+  background:rgba(255,255,255,.78);
   display:grid;
   place-items:center;
   line-height:0;
   cursor:pointer;
-  transition:background .18s ease,border-color .18s ease,box-shadow .18s ease;
+  box-shadow:0 1px 2px rgba(18,18,22,.02);
+  transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease;
 }
-.business-toggle-btn:hover{ background:rgba(255,255,255,.72); }
+.business-toggle-btn:hover{ background:#fff; transform:translateY(-1px); }
 .business-toggle-btn:focus-visible{
   outline:2px solid var(--blue);
   outline-offset:2px;
@@ -397,10 +493,10 @@ section{ padding:88px 0; }
 .business-toggle-rti-logo{
   display:block;
   width:auto;
-  height:44px;
+  height:49px;
   max-width:100%;
   mix-blend-mode:multiply;
-  transform:translateX(2px);
+  transform:translate(2px,-1px);
 }
 .business-view[hidden]{ display:none; }
 .business-view{
@@ -557,7 +653,11 @@ section{ padding:88px 0; }
 .engagement-pricing-rule{ min-width:0; padding:24px 30px; display:flex; flex-direction:column; justify-content:center; }
 .engagement-pricing-title{ font-family:var(--serif); font-size:23px; font-weight:700; line-height:1.2; color:var(--text); }
 .engagement-pricing-copy{ margin-top:10px; font-size:13px; line-height:1.6; color:var(--text-2); }
-.capacity-band{ margin-top:18px; }
+.capacity-band{
+  margin-top:0;
+  border-top:none;
+  border-radius:0 0 var(--radius-card) var(--radius-card);
+}
 @media (max-width:860px){
   .model-split{ grid-template-columns:1fr; }
   .delivery-roles{ grid-template-columns:1fr; padding:0; border-bottom:none; }
@@ -1150,8 +1250,8 @@ section{ padding:88px 0; }
       <div class="workstream-business-head">
         <div>
           <div class="business-band-label">Labrynth core business</div>
-          <div class="business-band-title">Strengthen new business, forward-deployed delivery, and client operations.</div>
-          <div class="business-band-copy">Three distinct workstreams across Labrynth's existing customer lifecycle.</div>
+          <div class="business-band-title">New business, delivery, and client operations.</div>
+          <div class="business-band-copy">AI FDEs · Deal Room · Account Management OS</div>
         </div>
       </div>
       <div class="workstream-slot" id="labrynth-workstream-slot"></div>
@@ -1161,8 +1261,8 @@ section{ padding:88px 0; }
       <div class="workstream-business-head">
         <div>
           <div class="business-band-label">RTI · Index as a Service</div>
-          <div class="business-band-title">Build the operating capability for new indices, new opportunities, and ongoing client relationships.</div>
-          <div class="business-band-copy">Three workstreams configured specifically around RTI's index lifecycle and commercial model.</div>
+          <div class="business-band-title">Index engineering, new business, and client operations.</div>
+          <div class="business-band-copy">Index Factory · Deal Room · Account Management OS</div>
         </div>
       </div>
       <div class="workstream-slot" id="rti-workstream-slot"></div>
@@ -1410,8 +1510,32 @@ section{ padding:88px 0; }
           <div class="engagement-price-unit">Per active workstream</div>
         </div>
         <div class="engagement-pricing-rule">
-          <div class="engagement-pricing-title">Select one business priority. Add capacity only when work needs to run in parallel.</div>
-          <div class="engagement-pricing-copy">The base engagement supports one active workstream at a time. Each additional workstream running concurrently requires another pod and starts at an additional $15,000 per month.</div>
+          <div class="engagement-pricing-title">Start with one workstream.</div>
+          <div class="engagement-pricing-copy">Move the pod as priorities change. Parallel work requires another pod, starting at an additional $15,000 per month.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="value-window" aria-label="Initial delivery targets">
+      <div class="value-window-intro">
+        <div class="value-window-kicker">Initial delivery targets</div>
+        <div class="value-window-title">First value in weeks.</div>
+        <div class="value-window-note">Timing assumes access and scope are confirmed.</div>
+      </div>
+      <div class="value-milestones">
+        <div class="value-milestone">
+          <div class="value-time"><strong>2</strong><span>Weeks</span></div>
+          <div>
+            <div class="value-milestone-title">Platform live</div>
+            <div class="value-milestone-copy">Client onboarding starts while UI and UX directions are reviewed.</div>
+          </div>
+        </div>
+        <div class="value-milestone">
+          <div class="value-time"><strong>1</strong><span>Month</span></div>
+          <div>
+            <div class="value-milestone-title">First features in use</div>
+            <div class="value-milestone-copy">The client starts using the first scoped capability.</div>
+          </div>
         </div>
       </div>
     </div>

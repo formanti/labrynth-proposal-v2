@@ -140,10 +140,18 @@ section{ padding:88px 0; }
 /* ---------- Through-line thesis panel (above the options) ---------- */
 .thesis{ border:1px solid var(--border); border-radius:var(--radius-card); background:var(--bg); padding:34px 40px; margin:8px 0 44px; }
 .thesis-head{ font-family:var(--serif); font-size:27px; font-weight:700; line-height:1.15; letter-spacing:-0.01em; color:var(--text); margin-bottom:14px; }
-.thesis-body{ font-family:var(--sans); font-size:15px; line-height:1.7; color:var(--text-2); max-width:780px; }
+.thesis-body{ font-family:var(--sans); font-size:15px; line-height:1.7; color:var(--text-2); max-width:1020px; }
 .thesis-body strong{ color:var(--text); font-weight:600; }
 .sequence-note{ margin-top:24px; font-size:12.5px; line-height:1.55; color:var(--text-3); text-align:center; }
 .sequence-note strong{ color:var(--text); font-weight:600; }
+.capacity-note{
+  margin:24px 0 0;
+  font-size:13.5px;
+  line-height:1.55;
+  color:var(--text-2);
+  text-align:center;
+}
+.capacity-note strong{ color:var(--text); font-weight:700; }
 .value-window{
   margin:30px 0 0;
   padding:30px 32px;
@@ -650,6 +658,15 @@ section{ padding:88px 0; }
 .engagement-price-value{ margin-top:22px; font-family:var(--serif); font-size:44px; line-height:1; font-weight:800; letter-spacing:-.025em; color:var(--text); }
 .engagement-price-value span{ font-family:var(--sans); font-size:15px; font-weight:500; letter-spacing:0; color:var(--text-3); }
 .engagement-price-unit{ margin-top:7px; font-size:12.5px; font-weight:700; color:var(--text); }
+.capacity-model-title{
+  margin-top:16px;
+  max-width:210px;
+  font-family:var(--serif);
+  font-size:25px;
+  font-weight:700;
+  line-height:1.15;
+  color:var(--text);
+}
 .engagement-pricing-rule{ min-width:0; padding:24px 30px; display:flex; flex-direction:column; justify-content:center; }
 .engagement-pricing-title{ font-family:var(--serif); font-size:23px; font-weight:700; line-height:1.2; color:var(--text); }
 .engagement-pricing-copy{ margin-top:10px; font-size:13px; line-height:1.6; color:var(--text-2); }
@@ -1500,21 +1517,7 @@ section{ padding:88px 0; }
       </div>
     </div>
 
-    <p class="sequence-note"><strong>Each workstream is scoped to its business context.</strong> The engagement supports one active workstream at a time, with parallel work requiring additional capacity.</p>
-
-    <div class="engagement-glance">
-      <div class="engagement-glance-main">
-        <div class="engagement-price">
-          <div class="engagement-glance-kicker">Workstream pricing</div>
-          <div class="engagement-price-value">$15,000 <span>/ mo</span></div>
-          <div class="engagement-price-unit">Per active workstream</div>
-        </div>
-        <div class="engagement-pricing-rule">
-          <div class="engagement-pricing-title">Start with one workstream.</div>
-          <div class="engagement-pricing-copy">Move the pod as priorities change. Parallel work requires another pod, starting at an additional $15,000 per month.</div>
-        </div>
-      </div>
-    </div>
+    <p class="capacity-note"><strong>Start with one workstream.</strong> Move the pod as priorities change, or add capacity for parallel work.</p>
 
     <div class="value-window" aria-label="Initial delivery targets">
       <div class="value-window-intro">
